@@ -4,7 +4,6 @@
 
 import FlutterMacOS
 import Foundation
-
 import connectivity_plus
 import firebase_analytics
 import firebase_core
