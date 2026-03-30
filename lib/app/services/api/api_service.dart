@@ -132,7 +132,7 @@ class ApiService {
         handler.resolve(retryResponse);
         return;
       } catch (refreshError) {
-        throw refreshError;
+        rethrow;
       }
     }
 
@@ -159,7 +159,7 @@ class ApiService {
     } catch (refreshError) {
       appLog('Failed to refresh token: $refreshError');
       _processQueue(refreshError);
-      throw refreshError;
+      rethrow;
     } finally {
       _isRefreshing = false;
     }
@@ -248,5 +248,12 @@ class ApiService {
 
   Future<void> clearTokens() async {
     await _clearTokens();
+  }
+
+  /// Whether a non-empty access token is stored (splash / cold start routing).
+  Future<bool> hasSession() async {
+    await _loadTokens();
+    final t = _accessToken;
+    return t != null && t.isNotEmpty;
   }
 }
