@@ -5,7 +5,6 @@ import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:skeletonizer/skeletonizer.dart';
 
 
 class SmallAppText extends StatelessWidget {
@@ -41,7 +40,7 @@ class SmallAppText extends StatelessWidget {
       child: Text(
         data,
         textAlign: alignment,
-        style: GoogleFonts.montserrat(
+        style: GoogleFonts.instrumentSans(
           color: color ?? Get.theme.colorScheme.onSurface,
           fontSize: fontSize?.sp,
           fontWeight: fontWeight,
@@ -91,7 +90,7 @@ class MedAppText extends StatelessWidget {
       },
       child: Text(
         data,
-        style: GoogleFonts.montserrat(
+        style: GoogleFonts.instrumentSans(
           color: color ?? Get.theme.colorScheme.onSurface,
           fontSize: fontSize?.sp,
           fontWeight: fontWeight ?? FontWeight.normal,
@@ -141,7 +140,7 @@ class BigAppText extends StatelessWidget {
       },
       child: Text(
         data,
-        style: GoogleFonts.montserrat(
+        style: GoogleFonts.instrumentSans(
           color: color ?? Get.theme.colorScheme.onSurface,
           fontSize: fontSize?.sp,
           textStyle: Theme.of(context).textTheme.headlineSmall?.copyWith(
