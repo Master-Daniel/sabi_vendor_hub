@@ -1,9 +1,6 @@
 // ignore_for_file: constant_identifier_names
 
-import 'dart:convert';
 
-import 'package:get/get.dart';
-import 'package:get/get_core/src/get_main.dart';
 
 import 'app_logger.dart';
 
