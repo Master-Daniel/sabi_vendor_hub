@@ -50,13 +50,10 @@ static void validateTranslations() {
     appLog("All translations validated successfully!");
   }
 
-  static Locale? getDefaultLocal() {
+  static Locale getDefaultLocal() {
     final box = GetStorage();
-    String? lang = box.read(AppConstants.defaultLanguageKey);
-    if (lang == null) {
-      return Get.deviceLocale;
-    }
-    return Locale(lang);
+    final lang = box.read<String>(AppConstants.defaultLanguageKey);
+    return Locale(lang ?? 'en');
   }
 
   static void changeLocale(String lang) {
