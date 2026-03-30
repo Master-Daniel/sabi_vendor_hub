@@ -5,7 +5,6 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:get/get.dart';
-import 'package:iconsax_plus/iconsax_plus.dart';
 import 'package:sabi_vendor_hub_mobile/app/widgets/app_elevated_button.dart';
 import 'package:sabi_vendor_hub_mobile/app/widgets/apptext.dart';
 import 'package:sabi_vendor_hub_mobile/app/widgets/bottomsheet_handlebar.dart';
