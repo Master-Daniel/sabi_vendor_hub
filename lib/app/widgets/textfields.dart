@@ -62,7 +62,7 @@ class AppTextFormField extends StatelessWidget {
           child: RichText(
             text: TextSpan(
               text: label ?? "",
-              style: GoogleFonts.montserrat(
+              style: GoogleFonts.instrumentSans(
                 color: Get.theme.colorScheme.onSurface,
                 fontSize: 13.sp,
                 textStyle: Theme.of(context).textTheme.bodyMedium,
@@ -70,7 +70,7 @@ class AppTextFormField extends StatelessWidget {
               children: [
                 TextSpan(
                   text: isRequired == true ? " *" : "",
-                  style: GoogleFonts.montserrat(
+                  style: GoogleFonts.instrumentSans(
                     color: Get.theme.colorScheme.error,
                     fontSize: 13.sp,
                     textStyle: Theme.of(context).textTheme.bodyMedium,
@@ -98,7 +98,7 @@ class AppTextFormField extends StatelessWidget {
             focusColor: Get.theme.colorScheme.primary,
             enabledBorder: OutlineInputBorder(
               borderSide: BorderSide(
-                color: Get.theme.colorScheme.surfaceVariant,
+                color: Get.theme.colorScheme.surfaceContainerHighest,
                 width: 2,
               ),
               borderRadius: BorderRadius.circular(10),
@@ -113,17 +113,17 @@ class AppTextFormField extends StatelessWidget {
             fillColor: Colors.transparent,
             border: OutlineInputBorder(
               borderSide: BorderSide(
-                color: Get.theme.colorScheme.surfaceVariant,
+                color: Get.theme.colorScheme.surfaceContainerHighest,
                 width: 2,
               ),
               borderRadius: BorderRadius.circular(10),
             ),
             prefixIcon: prefixIcon,
             suffixIcon: suffixIcon,
-            suffixIconColor: Get.theme.colorScheme.surfaceVariant,
-            prefixIconColor: Get.theme.colorScheme.surfaceVariant,
+            suffixIconColor: Get.theme.colorScheme.surfaceContainerHighest,
+            prefixIconColor: Get.theme.colorScheme.surfaceContainerHighest,
             hintText: hint,
-            hintStyle: GoogleFonts.outfit(
+            hintStyle: GoogleFonts.instrumentSans(
               color: Get.theme.colorScheme.onSurfaceVariant.withOpacity(0.5),
             ),
             suffixIconConstraints:
@@ -134,7 +134,7 @@ class AppTextFormField extends StatelessWidget {
             ), // Customize label text color
           ),
           autofocus: autoFocus ?? false,
-          style: GoogleFonts.outfit(
+          style: GoogleFonts.instrumentSans(
             color: Get.theme.colorScheme.onSurface,
             fontSize: 12.sp,
             fontWeight: FontWeight.w400,
@@ -228,7 +228,7 @@ class DropdownTextFormField extends StatelessWidget {
           child: RichText(
             text: TextSpan(
               text: label ?? "",
-              style: GoogleFonts.montserrat(
+              style: GoogleFonts.instrumentSans(
                 color: Get.theme.colorScheme.onSurface,
                 fontSize: 12.sp,
                 textStyle: Theme.of(context).textTheme.bodyMedium,
@@ -236,7 +236,7 @@ class DropdownTextFormField extends StatelessWidget {
               children: [
                 TextSpan(
                   text: isRequired == true ? " *" : "",
-                  style: GoogleFonts.montserrat(
+                  style: GoogleFonts.instrumentSans(
                     color: Get.theme.colorScheme.error,
                     fontSize: 12.sp,
                     textStyle: Theme.of(context).textTheme.bodyMedium,
@@ -253,7 +253,7 @@ class DropdownTextFormField extends StatelessWidget {
             isExpanded: true,
             focusNode: focusNode,
             hint: Text(hint,
-                style: GoogleFonts.outfit(
+                style: GoogleFonts.instrumentSans(
                   color:
                       Get.theme.colorScheme.onSurfaceVariant.withOpacity(0.5),
                   fontSize: 12.sp,
@@ -267,7 +267,7 @@ class DropdownTextFormField extends StatelessWidget {
               enabledBorder: OutlineInputBorder(
                 borderRadius: BorderRadius.circular(14.r),
                 borderSide: BorderSide(
-                    color: Get.theme.colorScheme.surfaceVariant, width: 2),
+                    color: Get.theme.colorScheme.surfaceContainerHighest, width: 2),
               ),
               focusedBorder: OutlineInputBorder(
                 borderRadius: BorderRadius.circular(14.r),
@@ -396,7 +396,7 @@ class _CategoryTextFormFieldState extends State<CategoryTextFormField> {
           RichText(
             text: TextSpan(
               text: widget.label,
-              style: GoogleFonts.montserrat(
+              style: GoogleFonts.instrumentSans(
                 color: Get.theme.colorScheme.onSurface,
                 fontSize: 12.sp,
                 textStyle: Theme.of(context).textTheme.bodyMedium,
@@ -405,7 +405,7 @@ class _CategoryTextFormFieldState extends State<CategoryTextFormField> {
                 if (widget.isRequired == true)
                   TextSpan(
                     text: " *",
-                    style: GoogleFonts.montserrat(
+                    style: GoogleFonts.instrumentSans(
                       color: Get.theme.colorScheme.error,
                       fontSize: 12.sp,
                       textStyle: Theme.of(context).textTheme.bodyMedium,
@@ -450,7 +450,7 @@ class _CategoryTextFormFieldState extends State<CategoryTextFormField> {
                     tileColor: Get.theme.colorScheme.surface,
                     title: Text(
                       option,
-                      style: GoogleFonts.outfit(
+                      style: GoogleFonts.instrumentSans(
                         color: Get.theme.colorScheme.onSurface,
                         fontSize: 13.sp,
                         fontWeight: FontWeight.w400,
@@ -525,7 +525,7 @@ class AppMultiTextFormField extends StatelessWidget {
               RichText(
                 text: TextSpan(
                   text: label ?? "",
-                  style: GoogleFonts.montserrat(
+                  style: GoogleFonts.instrumentSans(
                     color: Get.theme.colorScheme.onSurface,
                     fontSize: 13.sp,
                     textStyle: Theme.of(context).textTheme.bodyMedium,
@@ -533,7 +533,7 @@ class AppMultiTextFormField extends StatelessWidget {
                   children: [
                     TextSpan(
                       text: isRequired == true ? " *" : "",
-                      style: GoogleFonts.montserrat(
+                      style: GoogleFonts.instrumentSans(
                         color: Get.theme.colorScheme.error,
                         fontSize: 12.sp,
                         textStyle: Theme.of(context).textTheme.bodyMedium,
@@ -558,7 +558,7 @@ class AppMultiTextFormField extends StatelessWidget {
             focusColor: Get.theme.colorScheme.onSurface,
             enabledBorder: OutlineInputBorder(
               borderSide: BorderSide(
-                color: Get.theme.colorScheme.surfaceVariant,
+                color: Get.theme.colorScheme.surfaceContainerHighest,
                 width: 2,
               ), // Grey border
               borderRadius: BorderRadius.circular(10),
@@ -572,24 +572,24 @@ class AppMultiTextFormField extends StatelessWidget {
             ),
             border: OutlineInputBorder(
               borderSide:
-                  BorderSide(color: Get.theme.colorScheme.surfaceVariant),
+                  BorderSide(color: Get.theme.colorScheme.surfaceContainerHighest),
               borderRadius: BorderRadius.circular(10),
             ),
             prefixIcon: prefixIcon,
             suffixIcon: suffixIcon,
-            suffixIconColor: Get.theme.colorScheme.surfaceVariant,
-            prefixIconColor: Get.theme.colorScheme.surfaceVariant,
+            suffixIconColor: Get.theme.colorScheme.surfaceContainerHighest,
+            prefixIconColor: Get.theme.colorScheme.surfaceContainerHighest,
             hintText: hint,
             hintMaxLines: 1,
-            hintStyle: GoogleFonts.outfit(
+            hintStyle: GoogleFonts.instrumentSans(
               color: Get.theme.colorScheme.onSurfaceVariant.withOpacity(0.5),
             ),
             contentPadding: contentPadding,
-            labelStyle: GoogleFonts.outfit(
+            labelStyle: GoogleFonts.instrumentSans(
               color: Get.theme.colorScheme.onSurface,
             ),
           ),
-          style: GoogleFonts.outfit(
+          style: GoogleFonts.instrumentSans(
             color: Get.theme.colorScheme.onSurface,
             fontSize: 12.sp,
             fontWeight: FontWeight.w400,
@@ -648,7 +648,7 @@ class GooglePlacesTextFormField extends StatelessWidget {
           child: RichText(
             text: TextSpan(
               text: label ?? "",
-              style: GoogleFonts.montserrat(
+              style: GoogleFonts.instrumentSans(
                 color: Get.theme.colorScheme.onSurface,
                 fontSize: 13.sp,
                 textStyle: Theme.of(context).textTheme.bodyMedium,
@@ -656,7 +656,7 @@ class GooglePlacesTextFormField extends StatelessWidget {
               children: [
                 TextSpan(
                   text: isRequired == true ? " *" : "",
-                  style: GoogleFonts.montserrat(
+                  style: GoogleFonts.instrumentSans(
                     color: Get.theme.colorScheme.error,
                     fontSize: 13.sp,
                     textStyle: Theme.of(context).textTheme.bodyMedium,
@@ -710,14 +710,14 @@ class GooglePlacesTextFormField extends StatelessWidget {
               contentPadding: simPad(16, 10),
               enabledBorder: OutlineInputBorder(
                 borderSide: BorderSide(
-                  color: Get.theme.colorScheme.surfaceVariant,
+                  color: Get.theme.colorScheme.surfaceContainerHighest,
                   width: 2,
                 ), // Grey border
                 borderRadius: BorderRadius.circular(10),
               ),
               border: OutlineInputBorder(
                 borderSide: BorderSide(
-                  color: Get.theme.colorScheme.surfaceVariant,
+                  color: Get.theme.colorScheme.surfaceContainerHighest,
                   width: 2,
                 ), // Grey border
                 borderRadius: BorderRadius.circular(10),
@@ -726,17 +726,17 @@ class GooglePlacesTextFormField extends StatelessWidget {
               suffixIcon: suffixIcon,
               isDense: true,
               hintText: hint,
-              hintStyle: GoogleFonts.outfit(
+              hintStyle: GoogleFonts.instrumentSans(
                 color: Get.theme.colorScheme.onSurfaceVariant.withOpacity(0.5),
               ),
-              labelStyle: GoogleFonts.outfit(
+              labelStyle: GoogleFonts.instrumentSans(
                 color: Get.theme.colorScheme.onSurface,
                 fontSize: 12.sp,
                 fontWeight: FontWeight.w400,
                 textStyle: Theme.of(context).textTheme.bodyMedium,
               ), // Custze label text color
             ),
-            style: GoogleFonts.outfit(
+            style: GoogleFonts.instrumentSans(
               color: Get.theme.colorScheme.onSurface,
               fontSize: 12.sp,
               fontWeight: FontWeight.w400,
@@ -808,7 +808,7 @@ class PhoneNumberTextFormField extends StatelessWidget {
           child: RichText(
             text: TextSpan(
               text: label ?? "",
-              style: GoogleFonts.montserrat(
+              style: GoogleFonts.instrumentSans(
                 color: Get.theme.colorScheme.onSurface,
                 fontSize: 13.sp,
                 textStyle: Theme.of(context).textTheme.bodyMedium,
@@ -816,7 +816,7 @@ class PhoneNumberTextFormField extends StatelessWidget {
               children: [
                 TextSpan(
                   text: isRequired == true ? " *" : "",
-                  style: GoogleFonts.montserrat(
+                  style: GoogleFonts.instrumentSans(
                     color: Get.theme.colorScheme.error,
                     fontSize: 13.sp,
                     textStyle: Theme.of(context).textTheme.bodyMedium,
@@ -849,7 +849,7 @@ class PhoneNumberTextFormField extends StatelessWidget {
             focusColor: Get.theme.colorScheme.primary,
             enabledBorder: OutlineInputBorder(
               borderSide: BorderSide(
-                color: Get.theme.colorScheme.surfaceVariant,
+                color: Get.theme.colorScheme.surfaceContainerHighest,
                 width: 2,
               ),
               borderRadius: BorderRadius.circular(10),
@@ -864,17 +864,17 @@ class PhoneNumberTextFormField extends StatelessWidget {
             fillColor: Colors.transparent,
             border: OutlineInputBorder(
               borderSide: BorderSide(
-                color: Get.theme.colorScheme.surfaceVariant,
+                color: Get.theme.colorScheme.surfaceContainerHighest,
                 width: 2,
               ),
               borderRadius: BorderRadius.circular(10),
             ),
             prefixIcon: prefixIcon,
             suffixIcon: suffixIcon,
-            suffixIconColor: Get.theme.colorScheme.surfaceVariant,
-            prefixIconColor: Get.theme.colorScheme.surfaceVariant,
+            suffixIconColor: Get.theme.colorScheme.surfaceContainerHighest,
+            prefixIconColor: Get.theme.colorScheme.surfaceContainerHighest,
             hintText: hint,
-            hintStyle: GoogleFonts.outfit(
+            hintStyle: GoogleFonts.instrumentSans(
               color: Get.theme.colorScheme.onSurfaceVariant.withOpacity(0.5),
             ),
             suffixIconConstraints:
@@ -884,7 +884,7 @@ class PhoneNumberTextFormField extends StatelessWidget {
               color: Get.theme.colorScheme.onSurface,
             ),
           ),
-          textStyle: GoogleFonts.outfit(
+          textStyle: GoogleFonts.instrumentSans(
             color: Get.theme.colorScheme.onSurface,
             fontSize: 12.sp,
             fontWeight: FontWeight.w400,
