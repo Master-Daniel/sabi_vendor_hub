@@ -5,14 +5,15 @@ allprojects {
     }
 }
 
-rootProject.buildDir = "../build"
-subprojects {
-    project.buildDir = "${rootProject.buildDir}/${project.name}"
-}
-subprojects {
-    project.evaluationDependsOn(":app")
+// Use layout.buildDirectory so AGP resolves SDK / output paths reliably (avoids
+// deprecated rootProject.buildDir with Gradle 8+).
+def flutterProjectBuildDir = new File(rootProject.projectDir, "../build")
+rootProject.layout.buildDirectory.fileValue(flutterProjectBuildDir)
+subprojects { subproject ->
+    subproject.layout.buildDirectory.fileValue(new File(flutterProjectBuildDir, subproject.name))
+    subproject.evaluationDependsOn(":app")
 }
 
 tasks.register("clean", Delete) {
-    delete rootProject.buildDir
+    delete rootProject.layout.buildDirectory
 }
