@@ -45,5 +45,9 @@
 	<true/>
 	<key>UIApplicationSupportsIndirectInputEvents</key>
 	<true/>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>We need access to your photos so you can choose a profile picture.</string>
+	<key>NSCameraUsageDescription</key>
+	<string>We need camera access if you take a new profile photo.</string>
 </dict>
 </plist>
