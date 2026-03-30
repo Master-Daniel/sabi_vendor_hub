@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class AppTheme {
   static const darkTheme = ColorScheme.dark(
@@ -19,15 +20,11 @@ class AppTheme {
     onError: Colors.white,
     errorContainer: Color(0xFF9d0b39),
     onErrorContainer: Colors.white,
-
-// Lightened background for better readability
-    background: Color(0xFF121212),
-    onBackground: Colors.white,
 // Slightly lighter surface color
     surface: Color(0xFF1e1e22),
     onSurface: Colors.white,
 // More distinguished surface variant
-    surfaceVariant: Color(0xFF2d2d32),
+    surfaceContainerHighest: Color(0xFF2d2d32),
     onSurfaceVariant: Color.fromARGB(255, 235, 235, 236),
 // Lighter outline for better contrast
     outline: Color(0xFF8a8a8a),
@@ -45,28 +42,38 @@ class AppTheme {
     onError: Colors.white,
     errorContainer: Color(0xFF9d0b39),
     onErrorContainer: Colors.white,
-    background: Colors.white,
-    onBackground: Colors.black,
     surface: Colors.white,
     onSurface: Colors.black,
-    surfaceVariant: Color(0xFFF4F4F5),
+    surfaceContainerHighest: Color(0xFFF4F4F5),
     onSurfaceVariant: Color.fromARGB(255, 87, 84, 84),
     outline: Color(0xFF656567),
   );
 
   static final light = ThemeData(
     useMaterial3: true,
-    fontFamily: 'outfit',
     colorScheme: lightTheme,
     brightness: Brightness.light,
-    scaffoldBackgroundColor: lightTheme.background,
+    scaffoldBackgroundColor: lightTheme.surface,
+    textTheme: GoogleFonts.instrumentSansTextTheme(
+      ThemeData(useMaterial3: true, colorScheme: lightTheme).textTheme,
+    ),
+    primaryTextTheme: GoogleFonts.instrumentSansTextTheme(
+      ThemeData(useMaterial3: true, colorScheme: lightTheme).primaryTextTheme,
+    ),
   );
 
   static final dark = ThemeData(
     useMaterial3: true,
-    fontFamily: 'outfit',
     colorScheme: darkTheme,
     brightness: Brightness.dark,
     scaffoldBackgroundColor: darkTheme.surface,
+    textTheme: GoogleFonts.instrumentSansTextTheme(
+      ThemeData(useMaterial3: true, colorScheme: darkTheme, brightness: Brightness.dark)
+          .textTheme,
+    ),
+    primaryTextTheme: GoogleFonts.instrumentSansTextTheme(
+      ThemeData(useMaterial3: true, colorScheme: darkTheme, brightness: Brightness.dark)
+          .primaryTextTheme,
+    ),
   );
 }
