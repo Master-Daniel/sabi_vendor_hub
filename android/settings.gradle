@@ -1,6 +1,57 @@
 pluginManagement {
+    // Paths with spaces (e.g. C:\Users\Master Daniel\... or C:\flutter sdk\...) break
+    // AGP/javac. Rewrite local.properties to Windows 8.3 short paths when needed.
+    // Must run inside pluginManagement {} — Gradle requires this block first in the file.
+    def normalizeLocalPropertiesNoSpaces = {
+        def localPropsFile = file("local.properties")
+        if (!localPropsFile.exists()) {
+            return
+        }
+        if (!System.getProperty("os.name", "").toLowerCase().contains("windows")) {
+            return
+        }
+        def props = new java.util.Properties()
+        localPropsFile.withInputStream { props.load(it) }
+        boolean changed = false
+        ["sdk.dir", "flutter.sdk"].each { String key ->
+            String raw = props.getProperty(key)
+            if (raw == null || raw.isEmpty()) {
+                return
+            }
+            String path = raw.replace("\\\\", "\\")
+            if (!path.contains(" ")) {
+                return
+            }
+            File dir = new File(path)
+            if (!dir.exists()) {
+                return
+            }
+            try {
+                Process proc = new ProcessBuilder(
+                        "cmd", "/c", "for", "%A", "in", "(\"" + dir.absolutePath + "\")", "do", "@echo", "%~sA"
+                ).redirectErrorStream(true).start()
+                String shortPath = proc.inputStream.text.trim()
+                proc.waitFor()
+                if (!shortPath.isEmpty() && new File(shortPath).exists()) {
+                    String escaped = shortPath.replace("\\", "\\\\")
+                    if (escaped != raw) {
+                        props.setProperty(key, escaped)
+                        changed = true
+                    }
+                }
+            } catch (Exception ignored) {
+            }
+        }
+        if (changed) {
+            localPropsFile.withOutputStream { out ->
+                props.store(out, "Gradle: short paths for sdk.dir/flutter.sdk (no spaces)")
+            }
+        }
+    }
+    normalizeLocalPropertiesNoSpaces()
+
     def flutterSdkPath = {
-        def properties = new Properties()
+        def properties = new java.util.Properties()
         file("local.properties").withInputStream { properties.load(it) }
         def flutterSdkPath = properties.getProperty("flutter.sdk")
         assert flutterSdkPath != null, "flutter.sdk not set in local.properties"
@@ -18,8 +69,9 @@ pluginManagement {
 
 plugins {
     id "dev.flutter.flutter-plugin-loader" version "1.0.0"
-    id "com.android.application" version "8.1.0" apply false
-    id "org.jetbrains.kotlin.android" version "1.8.22" apply false
+    id "com.android.application" version "8.9.1" apply false
+    id "com.android.library" version "8.9.1" apply false
+    id "org.jetbrains.kotlin.android" version "2.1.21" apply false
 }
 
 include ":app"
